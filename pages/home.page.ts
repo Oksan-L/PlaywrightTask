@@ -23,7 +23,7 @@ export class HomePage {
   }
 
   async open() {
-    await this.page.goto('https://www.redmine.org/');
+    await this.page.goto('https://www.redmine.org/', { waitUntil: 'domcontentloaded', timeout: 60000 });
     await expect(this.page).toHaveTitle(/Redmine/);
   }
 
